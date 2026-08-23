@@ -1,0 +1,78 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+  namespace: techstore-app
+  labels:
+    app: techstore
+data:
+  STORE_NAME: "TechStore"
+  CURRENCY: "USD"
+  ENVIRONMENT: "production"
+  index.html: |
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TechStore - Catálogo Oficial</title>
+        <style>
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                margin: 0;
+                padding: 0;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: #333;
+                min-height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .container {
+                background: white;
+                padding: 50px;
+                border-radius: 15px;
+                box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+                text-align: center;
+                max-width: 600px;
+            }
+            h1 {
+                color: #667eea;
+                margin-bottom: 10px;
+                font-size: 2.5em;
+            }
+            .version {
+                color: #764ba2;
+                font-size: 1.2em;
+                margin-bottom: 30px;
+            }
+            .welcome {
+                color: #555;
+                font-size: 1.1em;
+                line-height: 1.6;
+            }
+            .badge {
+                display: inline-block;
+                background: #667eea;
+                color: white;
+                padding: 8px 16px;
+                border-radius: 20px;
+                margin-top: 20px;
+                font-size: 0.9em;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>🚀 TechStore - Catálogo Oficial</h1>
+            <p class="version">Versión v1.0.0</p>
+            <p class="welcome">
+                Bienvenido a TechStore, tu tienda virtual de comercio electrónico.
+                Nuestra plataforma está construida con tecnología de vanguardia
+                utilizando Kubernetes para garantizar alta disponibilidad,
+                escalabilidad y resiliencia en cada transacción.
+            </p>
+            <div class="badge">✨ Desplegado con Kubernetes</div>
+        </div>
+    </body>
+    </html>
